@@ -2,7 +2,6 @@ function dataSystem(){
 
 	textFont('Consolas')
 
-
 	position()
 	maxJumpLine()
 
@@ -11,7 +10,7 @@ function dataSystem(){
 
 function position(){
 
-	fill( 0 )
+	fill( 255 )
 
   text( 'POS: X: ' +  round(player.x,2) + '  Y: ' + round(player.y , 2) , 20,20)
 	text( 'Jump velocity: ' + player.yVelocity, 20, 50 )

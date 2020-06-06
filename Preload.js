@@ -2,6 +2,8 @@ var propellerAfterBoarding;
 
 var playerImages = {}
 
+var groundImage;
+
 function preload(){
 
 	//propellerAfterBoarding = loadSound('http://localhost:3000/Sounds/RobotSounds/propellerAfterBoarding.mp3')
@@ -19,6 +21,8 @@ function preload(){
 		animation_one: loadImage('Imgs/player/in_air_bot_a1.png')
 
 	}
+
+	groundImage = loadImage('Imgs/Suelo2.png')
 
 
 

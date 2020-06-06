@@ -16,15 +16,19 @@ function setup() {
   createCanvas(800, 400);
   
   heightGround = height / 6;
-  skyColor = color( 150, 150, 255)
+  skyColor = color( 38 )
 
   
   ground = {
   
     h: heightGround,
     y: height - heightGround,
-    color: color( 30, 255, 30 )
+    color: color( 77, 80, 87 ),
+    lines: [ width/3, width/3 *2, width ],
+    start: 0
   }
+
+
     
   startMaxYPosition = height - ground.h - height / 2
   doubleJumpMax = height - ground.h - height / 1.5
@@ -64,14 +68,32 @@ function draw() {
 function showGround(){
 
   rectMode( CORNER )
-  
+
+
+
   noStroke()
   
   fill( ground.color )
 
-  rect( 0, ground.y, width, ground.h)
+  let widthGround = ground.start
 
-  
+  while( widthGround < width ){
+
+    image( groundImage, widthGround, ground.y, 576 * ground.h / 144, ground.h)
+
+    widthGround += 576 * ground.h / 144
+
+  }
+
+
+
+  ground.start--
+
+  if( ground.start <=  0 - 576 * ground.h / 144 ){
+
+     ground.start = 0
+
+  }
 
 }
 
