@@ -75,13 +75,22 @@ function showGround(){
   
   fill( ground.color )
 
-  let widthGround = ground.start
+  let xGround = ground.start
+  let widthGround = groundImage.width * ground.h / groundImage.height;
 
-  while( widthGround < width ){
 
-    image( groundImage, widthGround, ground.y, 576 * ground.h / 144, ground.h)
 
-    widthGround += 576 * ground.h / 144
+  while( xGround < width ){
+
+    image(
+      groundImage,
+      xGround,
+      ground.y,
+      widthGround,
+      ground.h
+    )
+
+    xGround += widthGround;
 
   }
 

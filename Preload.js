@@ -22,7 +22,7 @@ function preload(){
 
 	}
 
-	groundImage = loadImage('Imgs/Suelo2.png')
+	groundImage = loadImage('Imgs/Suelo1.png')
 
 
 
