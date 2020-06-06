@@ -79,7 +79,6 @@ function showGround(){
   let widthGround = groundImage.width * ground.h / groundImage.height;
 
 
-
   while( xGround < width ){
 
     image(
