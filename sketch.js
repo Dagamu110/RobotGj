@@ -1,6 +1,13 @@
 var ground;
 var player;
 
+var back = {
+
+  x1: 0,
+  x2: 581.4814814814815
+
+}
+
 var heightGround;
 
 var skyColor;
@@ -9,6 +16,8 @@ var firstSpace = false;
 
 var startMaxYPosition;
 var doubleJumpMax;
+
+var backgroundStart = 0;
 
 var showData, showKeyBoxManager = false;
 
@@ -45,6 +54,49 @@ function setup() {
 function draw() {
   
   background( skyColor );
+
+  image(
+      backgroundImage,
+      back.x1--,
+      0,
+      backgroundImage.width * (height - ground.h) / backgroundImage.height,
+      height - ground.h
+
+    )
+  image(
+      backgroundImage,
+      back.x2--,
+      0,
+      backgroundImage.width * (height - ground.h) / backgroundImage.height,
+      height - ground.h
+
+    )
+
+  backgroundWidth = backgroundStart
+
+  while( backgroundWidth < width ){
+
+    image(
+      backgroundImage,
+      backgroundWidth,
+      0,
+      backgroundImage.width * (height - ground.h) / backgroundImage.height,
+      height - ground.h
+
+    )
+
+    backgroundWidth += backgroundImage.width * (height - ground.h) / backgroundImage.height
+
+
+  }
+
+  backgroundStart--
+
+  if( backgroundStart <= -(backgroundImage.width * (height - ground.h) / backgroundImage.height)){
+
+    backgroundStart = 0
+
+  }
   
   
   player.playerManager()
