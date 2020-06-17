@@ -3,14 +3,78 @@
     <script src="Libraries/p5.js"></script>
     <script src="Libraries/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta charset="utf-8">
 
   </head>
   <body>
+
+    <div class="container" style="top: 400px;position: absolute;">
+      
+      <ul class="tabs" >
+
+        <li class="tab col s3"><a href="#Player">Player</a></li>
+        <li class="tab col s3"><a href="#Background">Background</a></li>
+        <li class="tab col s3"><a href="#Ground">Ground</a></li>
+
+      </ul>
+
+      <div id="Player" class="col s12 blue">
+          <table class="normalState">
+            <thead>
+              <tr>
+                <th>Img</th>
+                <th>Select</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class='normalPos'>
+                  <td> <img ></td>
+                  <td id='inputNormalPosNormalState'> </td>
+                </tr>
+                <tr class='animationOne'>
+                  <td> <img ></td>
+                  <td id='inputA1NormalState'> </td>
+                </tr>
+              
+            </tbody>
+          </table>
+         <table class="inAir">
+            <thead>
+              <tr>
+                <th>Img</th>
+                <th>Select</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class='normalPos'>
+                  <td> <img ></td>
+                  <td id='inputNormalPosInAir'> </td>
+                </tr>
+                <tr class='animationOne'>
+                  <td> <img ></td>
+                  <td  id='inputA1InAir'> </td>
+                </tr>
+       
+            </tbody>
+          </table>
+      </div>
+      <div id="Background" class="col s12 red">Test 2</div>
+      <div id="Ground" class="col s12 green">Test 3</div>
+
+    </div>
+
+
     <script src="Preload.js"></script>
+    <script src="Js/design.js"></script>
     <script src="Js/Player.js"></script>
     <script src="sketch.js"></script>
     <script src="Js/DataSystem.js"></script>
+
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   
   	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 

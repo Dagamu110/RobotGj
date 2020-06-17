@@ -22,12 +22,17 @@ var backgroundStart = 0;
 var showData, showKeyBoxManager = false;
 
 function setup() {
-  createCanvas(800, 400);
+
+
+
+  c = createCanvas(800, 400);
+  c.position(0,0)
   
   heightGround = height / 6;
   skyColor = color( 38 )
 
-  
+  designSystem()
+
   ground = {
   
     h: heightGround,
@@ -46,7 +51,6 @@ function setup() {
   
   player = new Robot( ground.h, startMaxYPosition )
 
-  console.clear()
   
   
 }
@@ -55,22 +59,7 @@ function draw() {
   
   background( skyColor );
 
-  image(
-      backgroundImage,
-      back.x1--,
-      0,
-      backgroundImage.width * (height - ground.h) / backgroundImage.height,
-      height - ground.h
 
-    )
-  image(
-      backgroundImage,
-      back.x2--,
-      0,
-      backgroundImage.width * (height - ground.h) / backgroundImage.height,
-      height - ground.h
-
-    )
 
   backgroundWidth = backgroundStart
 
@@ -120,9 +109,6 @@ function draw() {
 function showGround(){
 
   rectMode( CORNER )
-
-
-
   noStroke()
   
   fill( ground.color )
@@ -141,6 +127,12 @@ function showGround(){
       ground.h
     )
 
+    stroke('red')
+
+    line(xGround,ground.y,xGround,height)
+
+    
+
     xGround += widthGround;
 
   }
@@ -149,7 +141,7 @@ function showGround(){
 
   ground.start--
 
-  if( ground.start <=  0 - 576 * ground.h / 144 ){
+  if( ground.start <=  0 - widthGround ){
 
      ground.start = 0
 

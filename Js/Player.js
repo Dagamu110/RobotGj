@@ -15,7 +15,7 @@ class Robot {
     }
     
     
-    this.levitation = 15
+    this.levitation = 10
     
     this.startYPosition = height - ground - this.dimension.h - this.levitation
     
@@ -135,8 +135,6 @@ class Robot {
   
   }
   changeSprite(state) {
-
-
 
     if( this.sprite == playerImages[state].normalPos ){
 
